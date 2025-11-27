@@ -1,0 +1,65 @@
+/* ------------------------------
+   GLOBAL AESTHETIC STYLING
+------------------------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* Base page */
+body {
+    background: #f9f5ef; /* warm soft neutral */
+    color: #2a2a2a;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.7;
+    min-height: 100vh;
+    transition: 0.3s ease;
+    padding-bottom: 4rem;
+}
+
+/* Headers */
+header {
+    background: #f9f5ef;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px 0;
+}
+
+/* Code */
+pre {
+    overflow: hidden;
+    font-size: 0.85em;
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+/* Links */
+a {
+    font-weight: 600;
+    color: #534a89;
+    transition: 0.2s ease;
+}
+
+a:hover {
+    color: white;
+    background: #534a89;
+    padding: 3px 6px;
+    border-radius: 6px;
+}
+
+/* Main container */
+.container {
+    max-width: 85vw;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+}
+
+/* Page title section */
+.title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #443f39;
+    margin-top: 2rem;
+    text-transform: capitalize;
+}

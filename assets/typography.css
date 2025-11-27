@@ -1,0 +1,53 @@
+/* ------------------------------
+   SOFT MINIMAL TYPOGRAPHY
+------------------------------ */
+
+/* Paragraphs */
+p {
+    margin-top: 0.9em;
+    margin-bottom: 0.9em;
+    font-size: 1.05em;
+    line-height: 1.85;
+    color: #3c3c3c;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+}
+
+/* H1 — elegant + soft */
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.1em;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #1a1a1a;
+    margin-top: 0.7em;
+    margin-bottom: 0.4em;
+    text-transform: none;
+    padding-bottom: 0.25em;
+    border-bottom: 2px solid rgba(0,0,0,0.07);
+}
+
+/* H2 — calm subtitle style */
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.4em;
+    font-weight: 500;
+    color: #6e6e6e;
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
+    letter-spacing: 0.7px;
+    opacity: 0.9;
+}
+
+/* H3 — minimalist section label */
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.15em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #7a7a7a;
+    margin-top: 1.1em;
+    margin-bottom: 0.3em;
+    opacity: 0.85;
+}
