@@ -1,52 +1,58 @@
 /* ------------------------------
-   AESTHETIC NAVIGATION
+   MODERNE HORIZONTALE LESWEEK KNOPPEN (ANDER LETTERTYPE)
 ------------------------------ */
 
 .vertical-buttons {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Poppins', sans-serif;  /* nieuw lettertype */
     text-transform: uppercase;
     font-weight: 600;
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    margin: 0 0 2rem 0;   
+    display: flex;        
+    gap: 14px;            
+    justify-content: flex-start; /* voor centreren: center */
 }
 
 .vertical-buttons li a {
-    display: block;
-    padding: 12px 18px;
-    background: #ffffff;
-    color: #555;
+    display: inline-block;
+    padding: 12px 22px;       /* bredere knoppen */
+    min-width: 110px;         /* minimale breedte */
+    text-align: center;       
+    font-size: 0.85em;    
     text-decoration: none;
+    color: #4a4a4a;
+    background-color: #fefefe;
     border-radius: 12px;
 
-    /* soft pastel shadows */
-    box-shadow: 0 4px 10px rgba(200, 200, 255, 0.25);
-    transition: 
-        background 0.25s ease,
-        transform 0.2s ease,
-        box-shadow 0.25s ease;
+    /* zachte pastel schaduw */
+    box-shadow: 0 5px 12px rgba(180, 180, 255, 0.35);
+
+    /* vloeiende overgang */
+    transition: all 0.35s ease;
 }
 
-/* Hover animation */
 .vertical-buttons li a:hover {
-    background: linear-gradient(90deg, #f7eaff, #e7f3ff);
-    transform: translateX(6px);
-    box-shadow: 0 6px 14px rgba(170, 170, 255, 0.3);
+    background: linear-gradient(135deg, #f7eaff, #e7f3ff);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 9px 18px rgba(170, 170, 255, 0.35);
 }
 
-/* Accent dot (cute aesthetic) */
+/* klein pastelaccent bij hover */
 .vertical-buttons li a::before {
     content: "●";
-    color: #c8a8ff;
+    color: lightgreen; 
     opacity: 0;
     font-size: 0.7em;
     margin-right: 6px;
-    transition: opacity 0.2s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 .vertical-buttons li a:hover::before {
     opacity: 1;
+    transform: scale(1.25);
+}
+
+.vertical-buttons :hover {
+    box: lightpink;
 }

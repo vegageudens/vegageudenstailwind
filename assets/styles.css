@@ -6,8 +6,8 @@
 
 /* Base page */
 body {
-    background: #f9f5ef; /* warm soft neutral */
-    color: #2a2a2a;
+    background: lightpink;
+    color: #e95656;
     font-family: 'Roboto', sans-serif;
     line-height: 1.7;
     min-height: 100vh;
@@ -17,7 +17,6 @@ body {
 
 /* Headers */
 header {
-    background: #f9f5ef;
     font-family: 'Montserrat', sans-serif;
     padding: 20px 0;
 }
@@ -26,7 +25,7 @@ header {
 pre {
     overflow: hidden;
     font-size: 0.85em;
-    background: #ffffff;
+    background: darksalmon;
     padding: 14px;
     border-radius: 10px;
     box-shadow: 0 3px 8px rgba(0,0,0,0.08);
@@ -63,3 +62,36 @@ a:hover {
     margin-top: 2rem;
     text-transform: capitalize;
 }
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* responsief: zoveel mogelijk naast elkaar */
+    gap: 20px; /* ruimte tussen de schermen */
+    padding: 20px;
+}
+
+/* Grid items */
+.grid-item {
+    background-color: #f0f0f0; /* lichte achtergrond */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    text-align: center;
+}
+
+/* Afbeeldingen passen netjes in de grid items */
+.grid-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+p img {
+    margin-left: 50%;
+    border-radius: 5%;
+    stroke: azure;
+}
+
+
+
