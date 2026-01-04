@@ -1,3 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Poppins:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	body {
+		color: #e95656;
+		font-family: 'Roboto', sans-serif;
+		line-height: 1.7;
+		min-height: 100vh;
+		transition: 0.3s ease;
+				padding-bottom: 2.5rem; /* space for footer */
+		}
+
+		/* Animated background only for the homepage */
+		.index-bg {
+			/* much brighter, more saturated pink and blue */
+			background: linear-gradient(120deg, rgba(255,90,200,0.99), rgba(120,220,255,0.99), rgba(255,255,180,0.97));
+			background-size: 400% 400%;
+			animation: gradientShift 12s ease infinite;
+		}
+
+		/* Reusable bright animated background for other pages */
+		.page-bg {
+			/* much brighter, more saturated pink and blue for all other pages */
+			background: linear-gradient(120deg, rgba(255,110,220,0.99), rgba(120,220,255,0.99), rgba(255,255,180,0.97));
+			background-size: 400% 400%;
+			animation: gradientShift 12s ease infinite;
+		}
+
+		/* gentle gradient animation */
+		@keyframes gradientShift {
+			0% { background-position: 0% 50%; }
+			25% { background-position: 50% 20%; }
+			50% { background-position: 100% 50%; }
+			75% { background-position: 50% 80%; }
+			100% { background-position: 0% 50%; }
+		}
+
+		/* subtle radial glow to add gentle color motion */
+		.index-bg::before {
+				content: "";
+				position: absolute;
+				inset: 0;
+				pointer-events: none;
+				background: radial-gradient(ellipse at 10% 20%, rgba(255,255,255,0.06), transparent 10%),
+										radial-gradient(ellipse at 90% 80%, rgba(255,255,255,0.04), transparent 12%);
+				mix-blend-mode: overlay;
+		}
+
+	header {
+		font-family: 'Montserrat', sans-serif;
+		padding: 20px 0;
+	}
+
+	pre {
+		overflow: hidden;
+		font-size: 0.85em;
+		background: darksalmon;
+		padding: 14px;
+		border-radius: 10px;
+		box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+	}
+
+	a {
+		font-weight: 600;
+		color: #534a89;
+		transition: 0.2s ease;
+		text-decoration: none;
+	}
+
+	a:hover {
+		color: white;
+		/* Vertical stacked buttons for index page: equal height, width can vary */
+		ul.vertical-buttons.index-vertical {
+			display: flex !important;
+			flex-direction: column !important;
+			gap: 1rem !important;
+			align-items: center !important;
+			padding: 0 !important;
+			margin: 0 auto !important;
+			width: auto;
+		}
+		ul.vertical-buttons.index-vertical li { list-style: none !important; width: auto; }
+		ul.vertical-buttons.index-vertical li a {
+			display: flex !important;
+			align-items: center;
+			justify-content: center;
+			width: auto !important;
+			height: 72px !important; /* equal vertical size */
+			padding: 0 2rem !important;
+			font-size: 1.25rem !important;
+			white-space: normal !important; /* allow wrapping if necessary */
+			text-align: center !important;
+		}
+		background: #534a89;
+		padding: 3px 6px;
+		border-radius: 6px;
+	}
+
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+/* Additional converted asset rules (forms, modal, nav, flexboxes, typography) */
+@layer base {
+	p {
+		margin-top: 0.9em;
+		margin-bottom: 0.9em;
+		font-size: 1.05em;
+		line-height: 1.85;
+		color: #3c3c3c;
+		font-weight: 300;
+		letter-spacing: 0.3px;
+	}
+
+	h1 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 2.1em;
+		font-weight: 700;
+		letter-spacing: 1.2px;
+		color: #1a1a1a;
+		margin-top: 0.7em;
+		margin-bottom: 0.4em;
+		text-transform: none;
+		padding-bottom: 0.25em;
+		border-bottom: 2px solid rgba(0,0,0,0.07);
+	}
+
+	h2 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.4em;
+		font-weight: 500;
+		color: #6e6e6e;
+		margin-top: 1.2em;
+		margin-bottom: 0.5em;
+		letter-spacing: 0.7px;
+		opacity: 0.9;
+	}
+
+	h3 {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.15em;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		color: #7a7a7a;
+		margin-top: 1.1em;
+		margin-bottom: 0.3em;
+		opacity: 0.85;
+	}
+}
+
+@layer components {
+	/* Flex columns */
+	.two-columns {
+		display: flex;
+		gap: 20px;
+	}
+
+	.column {
+		flex: 1;
+	}
+
+	/* Forms */
+	form {
+		@apply mx-auto flex flex-col gap-4;
+		margin: 0 auto;
+	}
+
+	label {
+		@apply font-bold;
+	}
+
+	input,
+	textarea {
+		@apply p-2 text-base rounded border border-gray-300 w-full box-border;
+	}
+
+	button {
+		@apply px-4 py-3 text-base rounded border-0 text-white bg-blue-600 cursor-pointer;
+		background-color: #1976d2;
+	}
+
+	button:hover {
+		background-color: #0f4c8c;
+	}
+
+	/* Modal */
+	.modal {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s ease;
+		z-index: 1000;
+	}
+
+	.modal.show {
+		opacity: 1;
+		pointer-events: all;
+	}
+
+	.modal-content {
+		font-family: 'Montserrat', sans-serif;
+		background-color: #000000;
+		color: #e5e5e5;
+		padding: 30px 40px;
+		border-radius: 8px;
+		text-align: center;
+		max-width: 400px;
+		box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+		position: relative;
+	}
+
+	.modal-content h2,
+	.modal-content p {
+		color: #ffffff;
+	}
+
+	.modal-close {
+		position: absolute;
+		top: 10px;
+		right: 15px;
+		font-size: 20px;
+		font-weight: bold;
+		cursor: pointer;
+		color: #929292;
+	}
+
+	.modal-close:hover {
+		color: #ffffff;
+	}
+
+	/* Navigation (nav.css) — placed after earlier vertical-buttons to match original cascade */
+	.vertical-buttons {
+		font-family: 'Poppins', sans-serif;
+		text-transform: uppercase;
+		font-weight: 600;
+		list-style: none;
+		padding: 0;
+		margin: 0 0 2rem 0;
+		display: flex;
+		gap: 14px;
+		justify-content: flex-start;
+	}
+
+	/* Unified lighter purple button style */
+	.vertical-buttons li a,
+	ul.vertical-buttons li a,
+	.index-inline li a,
+	ul.vertical-buttons.index-inline li a {
+		@apply block w-full text-center py-8 text-3xl font-extrabold rounded-[18px] transition-transform;
+		box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+		background: #bbaaf7 !important;
+		color: #fff !important;
+		border: 1px solid #d1c4e9 !important;
+		transition: all 0.2s cubic-bezier(.4,0,.2,1);
+	}
+
+	.vertical-buttons li a:hover,
+	ul.vertical-buttons li a:hover,
+	.index-inline li a:hover,
+	ul.vertical-buttons.index-inline li a:hover {
+		background: #a78bfa !important;
+		color: #fff !important;
+		transform: scale(1.08);
+		box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+	}
+
+	/* Remove any decorative bullet for index-inline */
+	ul.vertical-buttons.index-inline li a::before { display: none !important; }
+	ul.vertical-buttons.index-inline li a { justify-content: center !important; text-align: center !important; }
+}
+
+@layer components {
+	.container {
+		max-width: 85vw;
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 2rem;
+	}
+
+	.title {
+		font-family: 'Montserrat', sans-serif;
+		font-size: 1.2em;
+		font-weight: 700;
+		color: #443f39;
+		margin-top: 2rem;
+		text-transform: capitalize;
+	}
+
+	.grid-container {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 20px;
+		padding: 20px;
+	}
+
+	.grid-item {
+		@apply bg-gray-100 rounded-xl shadow-md p-2 text-center;
+	}
+
+	.grid-item img {
+		width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+	}
+
+	p img {
+		margin-left: 50%;
+		border-radius: 5%;
+	}
+
+	ul.vertical-buttons {
+		list-style: none;
+		padding: 0;
+		margin: 60px auto;
+		display: grid !important;
+		grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+		gap: 25px;
+		width: 70%;
+		max-width: 950px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	ul.vertical-buttons li a {
+		@apply block w-full text-center py-8 text-3xl font-extrabold rounded-[18px] text-white transition-transform;
+		box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+		/* single purple gradient for all buttons */
+		background: linear-gradient(135deg, #a259ff 0%, #6d28d9 100%);
+		backdrop-filter: blur(12px);
+		-webkit-backdrop-filter: blur(12px);
+		border: 1px solid rgba(255,255,255,0.25);
+	}
+
+	ul.vertical-buttons li a:hover {
+		background: linear-gradient(135deg, #b794f4 0%, #7c3aed 100%);
+		transform: scale(1.08);
+		box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+	}
+	
+	/* Back arrow component */
+	.back-arrow-container { @apply text-center mb-2 }
+	.back-arrow { @apply inline-block px-3 py-2 rounded-full font-extrabold text-white bg-red-500; box-shadow: 0 6px 16px rgba(0,0,0,0.12); }
+	.back-arrow:hover { transform: translateY(-2px); }
+
+	/* Inline buttons for index page */
+	.index-inline { @apply flex gap-4 justify-center items-center mt-4 }
+	.index-inline li { list-style: none; }
+	.index-inline li a { 
+		display: inline-block;
+		padding: 2rem 2.25rem;
+		font-size: 1.5rem;
+		font-weight: 800;
+		border-radius: 18px;
+		color: #ffffff;
+		box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+		background: linear-gradient(135deg, #a259ff 0%, #6d28d9 100%);
+		transition: transform .15s ease, box-shadow .15s ease;
+	}
+	.index-inline li a:hover {
+		background: linear-gradient(135deg, #b794f4 0%, #7c3aed 100%);
+		transform: translateY(-4px) scale(1.02);
+		box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+	}
+
+	/* Stronger override so `vertical-buttons` doesn't force full-width here */
+	ul.vertical-buttons.index-inline {
+		display: flex !important;
+		gap: 1rem !important;
+		justify-content: center !important;
+		align-items: center !important;
+		padding: 0 !important;
+		margin: 0 auto !important;
+	}
+	ul.vertical-buttons.index-inline li { list-style: none !important; flex: 0 0 auto; }
+	ul.vertical-buttons.index-inline li a {
+		display: inline-flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+		height: 72px !important; /* equal height */
+		padding: 0 2.25rem !important;
+		font-size: 1.25rem !important;
+		white-space: nowrap !important;
+		text-align: center !important;
+	}
+	ul.vertical-buttons.index-inline li { list-style: none !important; flex: 1; min-width: 0; }
+	ul.vertical-buttons.index-inline li a {
+		display: flex !important;
+		width: 100% !important;
+		padding: 1.25rem 2rem !important;
+		font-size: 1.25rem !important;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+	}
+
+	/* Remove the decorative bullet space for the index inline buttons so text centers correctly */
+	ul.vertical-buttons.index-inline li a::before { display: none !important; }
+	ul.vertical-buttons.index-inline li a { justify-content: center !important; text-align: center !important; }
+
+	/* Make only the "alle knoppen" (all buttons) item a bit wider so the text fits better */
+	ul.vertical-buttons.index-inline li.alle-knoppen { flex: 2; }
+	ul.vertical-buttons.index-inline li.alle-knoppen a { padding-left: 4rem !important; padding-right: 4rem !important; }
+
+	.info-section {
+		max-width: 85vw;
+		margin: 2rem auto 6rem auto;
+		padding: 1.25rem;
+		background: rgba(255,255,255,0.85);
+		border-radius: 10px;
+		box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+	}
+
+	.info-section h2 {
+		margin-top: 0;
+		color: #443f39;
+	}
+}
+
+/* Footer: keep mirrored in Tailwind source */
+@layer components {
+	footer {
+		/* keep footer in normal document flow so it stays at the page end */
+		text-align: center;
+		padding: 0.75rem 0;
+		background: transparent;
+	}
+}
