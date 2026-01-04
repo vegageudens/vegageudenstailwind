@@ -1,45 +1,33 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage - Page 1</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tailwind Fonts Overview</title>
+    <link href="./dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="dist/output.css">
 </head>
-<body class="page-bg">
-    <div class="container">
-        <div class="title">
-            BP HTML 06 NodeJS
+<body class="index-bg min-h-screen flex flex-col px-6">
+    <div class="flex-1 flex flex-col items-center relative">
+        <h1 class="text-4xl font-bold text-center">Welkom op mijn ontwerpdocumentatie!</h1>
+        <div class="mt-4 w-full max-w-lg">
+                        <ul class="vertical-buttons index-inline mb-10">
+                                <li><a href="index.html#mainp">Home</a></li>
+                                <li class="alle-knoppen"><a href="all-buttons.html">Lesweken</a></li>
+                        </ul>
+                                                <div class="flex justify-center mt-20">
+                                                                                                              <div class="bg-white rounded-2xl shadow-lg px-8 py-4 max-w-xl w-full text-center border border-gray-200">
+                                                                                                                <p class="text-lg text-gray-800 pt-6">
+                                                            Welkom op mijn ontwerpdocumentatie! In deze website zult u heel de planning zien van lesweek 1 tot en met lesweek 12. Ik heb gewerkt aan interactieve schermen, leren werken met figma en met Tailwind. Elke week bevat dus bepaalde info die in die week zijn plaats gevonden.
+                                                        </p>
+                                                    </div>
+                                                </div>
         </div>
-        <div>
-            <ul id="top-buttons" class="vertical-buttons">
-                <li><a href="index.html">Page 1</a></li>
-                <li><a href="page2.html">Page 2</a></li>
-                <li><a href="page3.html">Page 3</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-        <page>
-
-            <h1>Hello from Node.js!</h1>
-            <p>This is a simple HTML page served by Node.js.</p>
-            <p> Requirements:
-                Node JS should be installed in your setup
-            </p>
-            <p>
-                Start command:
-                node server.js
-            </p>
-        </page>
     </div>
 
-    <div class="back-arrow-container">
-        <a href="#top-buttons" class="back-arrow" aria-label="Back to buttons">↑ Terug</a>
-    </div>
-
-    <footer class="mt-8 text-center text-sm text-gray-600">
-        <p>Repo: <a href="https://github.com/vegageudens/vegageudenstailwind.git" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">vegageudens/vegageudenstailwind</a></p>
+    <footer class="mt-8 text-center text-sm text-gray-600 flex flex-col items-center gap-2">
+        <p>Github: <a href="https://github.com/vegageudens/vegageudenstailwind.git" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:underline">vegageudens/vegageudenstailwind</a></p>
+        <a href="2425_PPT_GeudensVega_Interactieveschermen (3).zip" download class="mt-2 inline-block px-4 py-2 bg-blue-600 text-white font-semibold rounded hover:bg-blue-700 transition-colors">Download Zip Treinschermen</a>
     </footer>
 </body>
 </html>
